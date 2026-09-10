@@ -17,7 +17,7 @@ Um servidor HTTP REST, que expõe o chat-bot Blabinha através da rede, como um 
 ## Como usar a API
 
 1. Crie um novo usuário em `/users/register` e faça _log in_ em `/auth/token`, você receberá um token de acesso (`access_token`) e um token de recuperação (`refresh_token`), use o token de acesso para acessar os endpoints. Eventualmente o token de acesso irá expirar, requisite um novo token de acesso através de `/auth/refresh` utilizando o token de recuperação. Quando o token de recuperação expirar você terá que fazer _log in_ novamente. **Para os próximos passos é preciso passar o token de acesso no _header_ `Authorization`**.
-2. Crie um chat em `/chats`, com o modelo de LLM desejado e a estratégia de prompt preferida, e - opcionalmente - a seção que se deseja começar, para iniciar do 'zero' o valor padrão é `100`. A resposta será em _json_ no _schema_ `Chat`, contendo o atributo `id`. **Armazene esse id** para referênciar o chat nas próximas interações;
+2. Crie um chat em `/chats`, com o modelo de LLM desejado e a estratégia de prompt preferida, e - opcionalmente - a seção que se deseja começar, para iniciar do 'zero' o valor padrão é `100`. A resposta será em _json_ no _schema_ `Chat`, contendo o atributo `id`. **Armazene esse id** para referenciar o chat nas próximas interações;
 3. Interaja com o chat por meio de diálogos, com requisições do tipo `POST /dialogs`, enviando o **id do chat** e o **input desejado**. A resposta será em _json_, no esquema `Dialog`, que contém a resposta gerada por IA, informações sobre aquela seção, e o `Chat` pertencente atualizado.
 
 Para mais informações refira-se à [documentação](./docs/intro.md).
@@ -70,6 +70,6 @@ Onde $-1$ é a migração relativa à atual. Esse parâmetro também pode ser o 
 > As vezes deletar a base de dados e rodar a migração de novo pode resolver conflitos de dados.
 > 
 
-## Licensa
+## Licença
 
-Este projeto está sobre a _MIT License_, para saber o que você pode ou não fazer com esse projeto veja a [licensa](/LICENSE).
+Este projeto está sobre a _MIT License_, para saber o que você pode ou não fazer com esse projeto veja a [licença](/LICENSE).
